@@ -1,0 +1,36 @@
+OSB time_log  -  run: shell  -  2026-06-21 15:50:04
+wall-clock seconds per instrumented function; reset every run.
+cumulative_s includes callees; self_s excludes them.
+
+  cumulative_s      self_s   calls  function
+----------------------------------------------------------------
+     18.822005    0.005341       8  protocol.algorithms.registration.register_user
+     18.612445   18.612445      12  crypto.gs_scheme.verify
+     12.051281    0.006757       8  adapters.server.server.CentralServer.register
+      8.251517    8.251517      10  crypto.gs_scheme.sign
+      3.663543    0.002163       1  adapters.server.server.CentralServer.osb_trace
+      3.624672    0.000218       1  adapters.server.server.CentralServer.judge
+      2.405481    0.010567       1  protocol.algorithms.bubble.join_group
+      2.138707    2.138707       1  crypto.gs_scheme.trace
+      0.936898    0.000712       1  protocol.algorithms.bubble.start_group
+      0.849686    0.849686       2  crypto.be_scheme.setup
+      0.726904    0.000074       1  protocol.algorithms.messaging.open_message
+      0.714517    0.714517       1  crypto.be_scheme.decrypt
+      0.152450    0.000096      11  crypto.as_scheme.sign
+      0.152355    0.152355      11  crypto.primitives.schnorr.sign
+      0.133665    0.000080      11  crypto.as_scheme.verify
+      0.133585    0.133585      11  crypto.primitives.schnorr.verify
+      0.074483    0.000133       1  protocol.algorithms.messaging.seal
+      0.059724    0.059724       3  crypto.as_scheme.derive_pk
+      0.047865    0.000030       8  adapters.server.server.CentralServer.tracer_join
+      0.047835    0.047835       8  crypto.gs_scheme.join
+      0.047451    0.047451       8  crypto.as_scheme.keygen
+      0.043547    0.043547       1  crypto.be_scheme.encrypt
+      0.036917    0.036917       3  crypto.as_scheme.derive_sk
+      0.032273    0.000129       1  protocol.algorithms.bubble.find_offer
+      0.021361    0.021361       2  crypto.as_scheme.check
+      0.020514    0.020514       1  crypto.gs_scheme.keygen
+      0.001145    0.001145       1  protocol.algorithms.bubble.get_advisors
+      0.000002    0.000002       1  crypto.as_scheme.setup
+
+instrumented self-time total: 31.157607 s   (28 functions)

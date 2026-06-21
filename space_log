@@ -1,0 +1,36 @@
+OSB space_log  -  run: shell  -  2026-06-21 15:50:04
+space metric: peak RSS growth (getrusage); reset every run.
+cumulative includes callees; self excludes them.
+
+    cumulative        self   calls  function
+----------------------------------------------------------------
+     416.0 KiB       0.0 B       8  protocol.algorithms.registration.register_user
+     304.0 KiB   304.0 KiB      10  crypto.gs_scheme.sign
+     144.0 KiB   144.0 KiB      12  crypto.gs_scheme.verify
+      80.0 KiB       0.0 B       8  adapters.server.server.CentralServer.register
+      64.0 KiB       0.0 B       1  protocol.algorithms.bubble.join_group
+      32.0 KiB    32.0 KiB       1  crypto.gs_scheme.keygen
+      16.0 KiB    16.0 KiB       8  crypto.as_scheme.keygen
+      16.0 KiB    16.0 KiB      11  crypto.primitives.schnorr.sign
+      16.0 KiB       0.0 B      11  crypto.as_scheme.sign
+      16.0 KiB    16.0 KiB      11  crypto.primitives.schnorr.verify
+      16.0 KiB       0.0 B      11  crypto.as_scheme.verify
+      16.0 KiB    16.0 KiB       1  crypto.be_scheme.encrypt
+      16.0 KiB       0.0 B       1  protocol.algorithms.messaging.seal
+      16.0 KiB       0.0 B       1  protocol.algorithms.messaging.open_message
+         0.0 B       0.0 B       1  crypto.as_scheme.setup
+         0.0 B       0.0 B       8  crypto.gs_scheme.join
+         0.0 B       0.0 B       8  adapters.server.server.CentralServer.tracer_join
+         0.0 B       0.0 B       1  protocol.algorithms.bubble.get_advisors
+         0.0 B       0.0 B       3  crypto.as_scheme.derive_pk
+         0.0 B       0.0 B       3  crypto.as_scheme.derive_sk
+         0.0 B       0.0 B       1  protocol.algorithms.bubble.start_group
+         0.0 B       0.0 B       2  crypto.be_scheme.setup
+         0.0 B       0.0 B       2  crypto.as_scheme.check
+         0.0 B       0.0 B       1  protocol.algorithms.bubble.find_offer
+         0.0 B       0.0 B       1  crypto.be_scheme.decrypt
+         0.0 B       0.0 B       1  crypto.gs_scheme.trace
+         0.0 B       0.0 B       1  adapters.server.server.CentralServer.osb_trace
+         0.0 B       0.0 B       1  adapters.server.server.CentralServer.judge
+
+(28 functions; peak RSS is monotonic, so totals attribute growth)
