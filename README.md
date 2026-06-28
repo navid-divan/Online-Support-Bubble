@@ -2,6 +2,8 @@
 
 This is a proof-of-concept implementation of paper "_Online Support Bubble: a Privacy Preserving Support Group Mechanism_" with several interfaces for demonstration and records of time and space.
 
+In this repository, we have provided three interfaces: [terminal-based](https://github.com/navid-divan/Online-Support-Bubble) in this current directory (where it can get run via `./run.sh`), [graphical user interface](https://github.com/navid-divan/Online-Support-Bubble/tree/main/GUI) via the web application (where it can run by opening the [index.html](https://github.com/navid-divan/Online-Support-Bubble/blob/main/GUI/index.html) in your browser), and the mobile phone [Android application](https://github.com/navid-divan/Online-Support-Bubble/tree/main/android) (where it can run by installing the [apk file](https://github.com/navid-divan/Online-Support-Bubble/blob/main/android/OnlineSupportBubble-debug.apk) on the phone).
+
 An *online support bubble* lets a **subject** (a person seeking sensitive help) assemble an
 anonymous group of **advisors** chosen by their *attributes* — e.g. `cancer_specialist`,
 `legal_advisor`, ask questions, and receive auditable answers, while the
@@ -40,7 +42,7 @@ Tracing is intentionally split: the **Tracer** recovers a revocation token from 
 the **Registrar** can map that token back to a real identity. Neither can de-anonymise a user alone.
 
 ## Installation
-In this repository, we have provided three interfaces: terminal-based in the current directory, graphical user interface via the web application, and the mobile phone (Android) application. Our implementation requires **Python ≥ 3.10**. From the `osb/` directory:
+Our implementation requires **Python ≥ 3.10**. From the `osb/` directory:
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -e ".[dev]"     # installs py_ecc and pytest
