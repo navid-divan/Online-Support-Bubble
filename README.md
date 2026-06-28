@@ -31,7 +31,7 @@ isolated behind `crypto/primitives/pairing.py`, which is the only file that impo
 |--------|------|--------------|--------------|
 | **AS**: Asynchronous Remote Key Generation | `crypto/as_scheme` | Discrete-log ARKG in G1: `dpk = pk·g^ck`, `ck = H(DH-secret)`, credential authenticated with HMAC | CDH / GDH in G1 |
 | **GS**: Group Signature w/ Verifier-Local Revocation | `crypto/gs_scheme` | SDH membership credential `A = g1^{1/(γ+x)}` + Fiat–Shamir NIZK over a re-randomized `Â = A^t`; revocation tag `(Â, η^t)` with `η = hash_to_g2(m‖nonce)` | q-SDH in G1, ROM |
-| **BE**: Public-key Broadcast Encryption | `crypto/be_scheme` | Boneh–Gentry–Waters "basic" scheme, broadcasting to the full member set; type-III adaptation | q-BDHE |
+| **BE**: Public-key Broadcast Encryption | `crypto/be_scheme` | Boneh–Gentry–Waters classical scheme, broadcasting to the full member set; type-III adaptation | q-BDHE |
 | **Schnorr** signature | `crypto/primitives/schnorr.py` | Key-prefixed Schnorr over G1 (used by AS for signing) | DLog in G1, ROM |
 | **AEAD** | `crypto/primitives/aead.py` | Encrypt-then-MAC (SHA-256 keystream + HMAC-SHA-256), stdlib only, for the symmetric layer of BE | — |
 
