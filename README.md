@@ -41,7 +41,7 @@ isolated behind `crypto/primitives/pairing.py`, which is the only file that impo
 | **Registrar** | Onboards users, verifies their registration (`GS.Vf ∧ AS.Vf`), keeps the private identity map `uL` and the public permitted-key list `PKL`. Runs `Judge` during tracing. |
 | **Tracer** | Holds the group-signature manager key `tsk`, issues group keys at registration, maintains the public revocation list `cpkL`, runs `Trace`. |
 | **Ledger** | The append-only public store + authorisation-token accounting (`Register`, `Add`, `Get`, `Update`, `Search`). Tokens bind a location to its creator so only the creator can later update/close it. |
-| **Subject / Advisor** | Client-side actors (`entities/subject`, `entities/advisor`), facades over the protocol algorithms. A subject builds and moderates bubbles; advisors join by attribute.
+| **Subject / Advisor** | Client-side actors (`entities/subject`, `entities/advisor`) over the protocol algorithms. A subject builds and moderates bubbles; advisors join by attribute.
 
 Tracing is intentionally split: the **Tracer** recovers a revocation token from a signature, and only
 the **Registrar** can map that token back to a real identity. Neither can de-anonymise a user alone.
