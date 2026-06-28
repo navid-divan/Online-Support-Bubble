@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Online Support Bubble — privacy-preserving support groups</title>
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<div class="landing">
+  <nav class="nav">
+    <div class="brand"><span class="logo">◓</span><div>Online Support Bubble<small>privacy-preserving support groups</small></div></div>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#roles">Dashboards</a>
+      <a class="btn primary" href="app.html">Open the app →</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Research prototype · android edition</div>
+      <h1>Get expert support, <span class="grad">without giving up your privacy.</span></h1>
+      <p class="lead">Online Support Bubble lets a person seeking help assemble an anonymous group of advisors chosen by their qualifications — ask sensitive questions, receive auditable answers, and stay unlinkable across every group.</p>
+      <div class="cta">
+        <a class="btn primary" href="app.html">Open the dashboards →</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+      <div class="meta">
+        <div><b>5</b>actor roles</div>
+        <div><b>8</b>advisor attributes</div>
+        <div><b>0</b>identities on the ledger</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="row" style="background:var(--indigo-soft)">
+        <span class="avatar" style="background:hsl(259 52% 47%)">EC</span>
+        <div class="who">Emma Clarke<small>subject · seeking help</small></div>
+        <span class="tag pill">opens a bubble</span>
+      </div>
+      <div class="row">
+        <span class="avatar" style="background:hsl(168 52% 40%)">MW</span>
+        <div class="who">Dr. Martin Walker<small>cancer specialist · 10+ yrs</small></div>
+        <span class="tag teal pill">invited</span>
+      </div>
+      <div class="row">
+        <span class="avatar" style="background:hsl(20 60% 50%)">SB</span>
+        <div class="who">Sarah Bennett<small>legal advisor</small></div>
+        <span class="tag teal pill">invited</span>
+      </div>
+      <div class="row" style="background:#f8fafc">
+        <span class="avatar" style="background:#0f172a">🔒</span>
+        <div class="who">policy: cancer specialist AND legal advisor<small>satisfied by available advisors</small></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <h2>Built around five guarantees</h2>
+    <p class="sub">The same privacy properties proven in the paper, made tangible in an interactive interface.</p>
+    <div class="features">
+      <div class="feature"><div class="ic">🎯</div><h3>Attribute-based selection</h3><p>Choose advisors by what they can do — “cancer specialist”, “legal advisor”, “10+ years” — never by who they are.</p></div>
+      <div class="feature"><div class="ic">🔗</div><h3>Unlinkability</h3><p>Every membership uses a freshly derived key. No one can link you across two bubbles, or tell whether you are in any bubble at all.</p></div>
+      <div class="feature"><div class="ic">🛡️</div><h3>Non-frameability</h3><p>Messages are bound to derived keys, so nobody — not even the moderators — can impersonate you or frame you.</p></div>
+      <div class="feature"><div class="ic">⚖️</div><h3>Accountable tracing</h3><p>Misbehaviour can be traced to a real identity, but only when the Registrar and the Tracer cooperate. Neither can do it alone.</p></div>
+      <div class="feature"><div class="ic">✉️</div><h3>Encrypted group messaging</h3><p>Sign-then-encrypt broadcast keeps conversations confidential to the bubble and authenticated to each member.</p></div>
+      <div class="feature"><div class="ic">🗄️</div><h3>Server-backed</h3><p>This edition replaces the paper’s distributed ledger with a single server behind a clean interface — the same protocol, simpler to run.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <h2>How a bubble comes together</h2>
+    <p class="sub">Four steps, mirrored exactly by the dashboards.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Register</h4><p>Subjects and advisors enrol once; advisors declare their attributes.</p></div>
+      <div class="step"><div class="n">2</div><h4>Form by policy</h4><p>A subject states a policy — a set of requirements — and the system finds matching, available advisors.</p></div>
+      <div class="step"><div class="n">3</div><h4>Advisors join</h4><p>Each invited advisor joins under a fresh, unlinkable key and the group is live.</p></div>
+      <div class="step"><div class="n">4</div><h4>Message &amp; moderate</h4><p>Members exchange encrypted messages; the subject can replace, remove or close at any time.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="roles">
+    <h2>A dashboard for every role</h2>
+    <p class="sub">Switch instantly between all five actors to see the protocol from every side.</p>
+    <div class="features">
+      <div class="feature"><div class="ic">🙋</div><h3>Subject</h3><p>Build a bubble by policy, message advisors, replace or remove them, and close the group.</p></div>
+      <div class="feature"><div class="ic">🩺</div><h3>Advisor</h3><p>Review invitations, toggle availability, join bubbles and advise.</p></div>
+      <div class="feature"><div class="ic">🗂️</div><h3>Registrar</h3><p>Holds the identity register and judges a revocation token back to a real person.</p></div>
+      <div class="feature"><div class="ic">🔎</div><h3>Tracer</h3><p>Traces a misbehaving member to an anonymous revocation token.</p></div>
+      <div class="feature"><div class="ic">▤</div><h3>Ledger / Server</h3><p>The append-only store — only ever sees unlinkable keys, never names.</p></div>
+      <div class="feature"><div class="ic">📴</div><h3>Fully offline</h3><p>Runs entirely on your device with no network, no accounts, and no data ever leaving the app.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Open the live simulation</h2>
+    <p>No sign-up, no setup — sample users are ready and waiting.</p>
+    <a class="btn" href="app.html">Launch the dashboards →</a>
+  </div>
+
+  <footer class="foot">
+    <div>Based on <i>“Online Support Bubble: a Privacy Preserving Support Group Mechanism.”</i> Research prototype — not for protecting real users.</div>
+    <div>Android edition · on-device simulation</div>
+  </footer>
+</div>
+</body>
+</html>
