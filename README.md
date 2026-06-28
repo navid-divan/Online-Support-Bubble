@@ -34,14 +34,13 @@ isolated behind `crypto/primitives/pairing.py`, which is the only file that impo
 | **Registrar** | Onboards users, verifies their registration (`GS.Vf ∧ AS.Vf`), keeps the private identity map `uL` and the public permitted-key list `PKL`. Runs `Judge` during tracing. |
 | **Tracer** | Holds the group-signature manager key `tsk`, issues group keys at registration, maintains the public revocation list `cpkL`, runs `Trace`. |
 | **Ledger** | The append-only public store + authorisation-token accounting (`Register`, `Add`, `Get`, `Update`, `Search`). Tokens bind a location to its creator so only the creator can later update/close it. |
-| **Subject / Advisor** | Client-side actors (`entities/subject`, `entities/advisor`) — facades over the protocol algorithms. A subject builds and moderates bubbles; advisors join by attribute. |
+| **Subject / Advisor** | Client-side actors (`entities/subject`, `entities/advisor`), facades over the protocol algorithms. A subject builds and moderates bubbles; advisors join by attribute.
+
 Tracing is intentionally split: the **Tracer** recovers a revocation token from a signature, and only
 the **Registrar** can map that token back to a real identity. Neither can de-anonymise a user alone.
 
 ## Installation
-In this repository, we have provided three interfaces: terminal-based in the current directory, graphical user interface via the web application, and the mobile phone (Android) application.
-
-Our implementation requires **Python ≥ 3.10**. From the `osb/` directory:
+In this repository, we have provided three interfaces: terminal-based in the current directory, graphical user interface via the web application, and the mobile phone (Android) application. Our implementation requires **Python ≥ 3.10**. From the `osb/` directory:
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -e ".[dev]"     # installs py_ecc and pytest
@@ -49,9 +48,30 @@ python3 -m venv .venv
 This also installs an `osb` console command. The examples below use `python -m osb`, which works
 without activating the venv.
 
+## Usage
+A `run.sh` script sits in this directory. It creates the virtualenv and
+installs on first use, then launches:
+```bash
+./run.sh          # interactive shell (the app) - pre-loads sample users
+./run.sh demo     # scripted end-to-end walkthrough
+./run.sh test     # the full test suite
+./run.sh info     # build / curve info
+```
 
-The current directory contains a terminal-based interface, where it can get run via `./run.sh`.
+### Quick info
 
+```bash
+.venv/bin/python -m osb info
+```
 
-
-For now, to test you can simply run `./run.sh` to see a demo.
+## Testing and Benchmarking
+```bash
+.venv/bin/python -m pytest
+```
+The suite (105 tests) covers the cryptographic primitives (correctness, unforgeability,
+unlinkability, revocation, broadcast round-trips), the protocol layer (policy, ledger, registrar,
+tracer), and end-to-end flows (registration, bubble formation, messaging, moderation, tracing) plus
+the security-property checks in `tests/e2e/test_security.py`. For benchmarking:
+```bash
+.venv/bin/python scripts/benchmark.py
+```
