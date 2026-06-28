@@ -4,8 +4,13 @@ This is a proof-of-concept implementation of paper "_Online Support Bubble: a Pr
 
 In this repository, we have provided three interfaces: [terminal-based](https://github.com/navid-divan/Online-Support-Bubble) in this current directory (where it can get run via `./run.sh`), [graphical user interface](https://github.com/navid-divan/Online-Support-Bubble/tree/main/GUI) via the web application (where it can run by opening the [index.html](https://github.com/navid-divan/Online-Support-Bubble/blob/main/GUI/index.html) in your browser), and the mobile phone [Android application](https://github.com/navid-divan/Online-Support-Bubble/tree/main/android) (where it can run by installing the [apk file](https://github.com/navid-divan/Online-Support-Bubble/blob/main/android/OnlineSupportBubble-debug.apk) on the phone).
 
+For all three interfaces, two files get generated to record the time and space costs for each functions.
+* **`time_log`**: wall-clock time per instrumented function, in seconds, sorted by cumulative time.
+  `cumulative_s` includes callees; `self_s` is the function's own time.
+* **`space_log`**: memory attributed per instrumented function, sorted by cumulative usage.
+
 An *online support bubble* lets a **subject** (a person seeking sensitive help) assemble an
-anonymous group of **advisors** chosen by their *attributes* — e.g. `cancer_specialist`,
+anonymous group of **advisors** chosen by their *attributes*, e.g. `cancer_specialist`,
 `legal_advisor`, ask questions, and receive auditable answers, while the
 system guarantees:
 
